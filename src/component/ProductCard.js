@@ -1,12 +1,18 @@
 import React from 'react';
 
 const ProductCard = ({ productList }) => {
+    console.log('data', productList);
+
     return (
-        <div>
-            <img alt={productList.title} src={productList.img} />
-            <div>{productList.title}</div>
-            <div>{productList.price}</div>
-            <div>{productList.true}</div>
+        <div className="cardWarp">
+            {productList.map(pro => (
+                <div key={pro.id} className="card">
+                    <img src={pro.img} alt={pro.title} />
+                    <div>{pro.title}</div>
+                    <div>{pro.price}</div>
+                    <div>{pro.true}</div>
+                </div>
+            ))}
         </div>
     );
 };
