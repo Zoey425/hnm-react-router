@@ -1,38 +1,60 @@
 .App {
-  text-align: center;
+    margin: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.login-btn {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.login-btn div {
+    margin-left: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.logo {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 40px auto;
 }
 
-.App-link {
-  color: #61dafb;
+.menu {
+    display: flex;
+    justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.menu li {
+    margin: auto 1.5vw;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    text-decoration-line: underline;
+}
+
+.nav {
+    margin-bottom: 5%;
+}
+
+.menuWrap {
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    position: relative;
+    right: 50%;
+    transform: translateX(55%);
+}
+
+.search {
+    display: flex;
+    margin-right: 5vw;
+}
+
+.search input[type='text'] {
+    margin-left: 10px;
+    font-size: 12px;
+    border: 0;
+    outline: none;
+    padding-left: 10px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #333;
 }

@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Products from './page/Products';
 import ProductDetail from './page/ProductDetail';
 import Login from './page/Login';
+import Nav from './component/Nav';
 
 /**
  * 필요한 페이지
@@ -19,6 +20,7 @@ import Login from './page/Login';
 function App() {
     return (
         <div className="App">
+            <Nav />
             <Routes>
                 <Route path="/" element={<Products />} />
                 <Route path="/product/:id" element={<ProductDetail />} />
