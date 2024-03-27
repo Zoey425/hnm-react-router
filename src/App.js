@@ -1,25 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
 
+/**
+ * 필요한 페이지
+ * -> 전체 상품 페이지 / 로그인 / 상품 상세페이지
+ *
+ * 전체 상품페이지에서는 전체 상품이 나옴
+ * 로그인 버튼을 누르면 로그인 페이지로 이동
+ * 상품디테일 누르면 로그인이 안되어있으면 로그인페이지로, 되어있으면 상품 디테일 페이지로
+ * 로그아웃 버튼 클릭시 로그아웃
+ * 로그아웃되면 상품디테일 못보고 로그인 페이지로 reDirect
+ * 로그인 하면 로그아웃 보이고 로그아웃 하면 로그인으로 텍스트 변경
+ * 상품을 검색 -> 검색시 상품 전체 페이지에서 filter 됨
+ */
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return <div className="App"></div>;
 }
 
 export default App;
