@@ -1,5 +1,8 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
+import Products from './page/Products';
+import ProductDetail from './page/ProductDetail';
+import Login from './page/Login';
 
 /**
  * 필요한 페이지
@@ -14,7 +17,15 @@ import { Route, Routes } from 'react-router-dom';
  * 상품을 검색 -> 검색시 상품 전체 페이지에서 filter 됨
  */
 function App() {
-    return <div className="App"></div>;
+    return (
+        <div className="App">
+            <Routes>
+                <Route path="/" element={<Products />} />
+                <Route path="/product/:id" element={<ProductDetail />} />
+                <Route path="/login" element={<Login />} />
+            </Routes>
+        </div>
+    );
 }
 
 export default App;
