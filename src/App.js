@@ -5,6 +5,7 @@ import ProductDetail from './page/ProductDetail';
 import Login from './page/Login';
 import Nav from './component/Nav';
 import { useEffect, useState } from 'react';
+import PrivateRoute from './route/PrivateRoute';
 
 /**
  * 필요한 페이지
@@ -23,15 +24,13 @@ function App() {
     useEffect(() => {
         console.log(authenticate);
     }, [authenticate]);
-    const PrivateRoute = () => {
-        return authenticate === true ? <ProductDetail /> : <Navigate to="/login" />;
-    };
+
     return (
         <div className="App">
             <Nav authenticate={authenticate} />
             <Routes>
                 <Route path="/" element={<Products />} />
-                <Route path="/product/:id" element={<ProductDetail />} />
+                <Route path="/product/:id" element={<PrivateRoute authenticate={authenticate} />} />
                 <Route path="/login" element={<Login setAuthenticate={setAuthenticate} />} />
             </Routes>
         </div>

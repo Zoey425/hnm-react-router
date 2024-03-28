@@ -1,9 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ItemCard = ({ item }) => {
     const isItem = item?.new;
+    const navigate = useNavigate();
+    const showDetail = () => {
+        navigate(`/product/${item.id}`);
+    };
     return (
-        <div key={item?.id} className="cardWarp">
+        <div key={item.id} className="cardWarp" onClick={showDetail}>
             <div>
                 <div className={isItem === true ? 'cardImgNew' : ''}>{isItem === true ? 'NEW' : ''}</div>
                 <div className="cardImg">
