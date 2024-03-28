@@ -1,10 +1,10 @@
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Products from './page/Products';
 import ProductDetail from './page/ProductDetail';
 import Login from './page/Login';
 import Nav from './component/Nav';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 /**
  * 필요한 페이지
@@ -20,13 +20,19 @@ import { useState } from 'react';
  */
 function App() {
     const [authenticate, setAuthenticate] = useState(false); // true 이면 로그인
+    useEffect(() => {
+        console.log(authenticate);
+    }, [authenticate]);
+    const PrivateRoute = () => {
+        return authenticate === true ? <ProductDetail /> : <Navigate to="/login" />;
+    };
     return (
         <div className="App">
-            <Nav />
+            <Nav authenticate={authenticate} />
             <Routes>
                 <Route path="/" element={<Products />} />
                 <Route path="/product/:id" element={<ProductDetail />} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/login" element={<Login setAuthenticate={setAuthenticate} />} />
             </Routes>
         </div>
     );
