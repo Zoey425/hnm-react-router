@@ -1,11 +1,14 @@
-.App {
-    margin: 20px;
-}
-
 .login-btn {
     display: flex;
     justify-content: flex-end;
     font-size: 14px;
+    padding: 1vw 1vw 0 0;
+    line-height: 15px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    font-weight: bold;
 }
 
 .login-btn div {
@@ -21,6 +24,8 @@
 .menu {
     display: flex;
     justify-content: center;
+    margin-bottom: 0;
+    padding-left: 26vw;
 }
 
 .menu li {
@@ -32,21 +37,18 @@
     text-decoration-line: underline;
 }
 
-.nav {
+.navBar {
     margin-bottom: 5%;
 }
 
 .menuWrap {
-    display: grid;
-    grid-template-columns: 10fr 1fr;
-    position: relative;
-    right: 50%;
-    transform: translateX(55%);
+    display: flex;
+    justify-content: space-between;
 }
 
 .search {
     display: flex;
-    margin-right: 5vw;
+    padding: 1vw 1vw 0 0;
 }
 
 .search input[type='text'] {
@@ -60,5 +62,26 @@
 }
 
 .cardWarp {
-    display: flex;
+    cursor: pointer;
+    margin-bottom: 2vw;
+}
+
+.cardWarp:hover {
+    transform: scale(0.98);
+}
+.cardWarp img {
+    width: -webkit-fill-available;
+}
+
+.cardImg {
+    position: relative;
+}
+
+.cardImgNew {
+    position: absolute;
+    font-size: 0.8rem;
+    background-color: #fff;
+    margin: 10px;
+    padding: 5px 10px;
+    z-index: 99;
 }

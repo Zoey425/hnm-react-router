@@ -4,6 +4,7 @@ import Products from './page/Products';
 import ProductDetail from './page/ProductDetail';
 import Login from './page/Login';
 import Nav from './component/Nav';
+import { useState } from 'react';
 
 /**
  * 필요한 페이지
@@ -18,6 +19,7 @@ import Nav from './component/Nav';
  * 상품을 검색 -> 검색시 상품 전체 페이지에서 filter 됨
  */
 function App() {
+    const [authenticate, setAuthenticate] = useState(false); // true 이면 로그인
     return (
         <div className="App">
             <Nav />
