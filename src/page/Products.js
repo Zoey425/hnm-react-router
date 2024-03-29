@@ -5,7 +5,7 @@ import ItemCard from '../component/ItemCard';
 const Products = () => {
     const [productList, setProductList] = useState([]);
     const getProducts = async () => {
-        let url = `http://localhost:3004/products`;
+        let url = `https://my-json-server.typicode.com/Zoey425/hnm-react-router/products`;
         let response = await fetch(url);
         let data = await response.json();
         setProductList(data);
