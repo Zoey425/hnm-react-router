@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faClose, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 
 const Nav = ({ authenticate, toggleAuthenticate }) => {
@@ -31,6 +31,7 @@ const Nav = ({ authenticate, toggleAuthenticate }) => {
             let keyword = event.target.value;
             //console.log('keyword', keyword);
             navigate(`/?q=${keyword}`);
+            handleToggle(false);
         }
     };
     return (
@@ -48,8 +49,12 @@ const Nav = ({ authenticate, toggleAuthenticate }) => {
                     />
                 </div>
             </div>
-            <div className="menuBar">
-                <FontAwesomeIcon icon={faBars} onClick={handleToggle} />
+            <div className={`menuBar ${isShow ? 'closeBtn' : ''}`}>
+                {isShow ? (
+                    <FontAwesomeIcon icon={faClose} onClick={handleToggle} />
+                ) : (
+                    <FontAwesomeIcon icon={faBars} onClick={handleToggle} />
+                )}
             </div>
             <div className={`menuWrap ${isShow ? '' : 'hide'}`}>
                 <ul className="menu">
