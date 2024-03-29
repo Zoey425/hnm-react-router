@@ -1,5 +1,35 @@
+@media screen and (min-width: 375px) and (max-width: 1339px) {
+    .menuBar {
+        margin-bottom: 5%;
+        padding-left: 15px;
+        font-size: 1.2rem;
+    }
+
+    .menuWrap {
+        padding-left: 15px;
+        position: absolute;
+        z-index: 999;
+        background-color: #fff;
+        height: 100%;
+        width: 50%;
+    }
+
+    .login-btn {
+        padding-right: 15px;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .hide {
+        display: none !important;
+    }
+}
+
 .App {
-    margin: 20px 0 40px 0;
+    margin: 20px;
+    position: relative;
 }
 
 .login-btn {
@@ -24,47 +54,6 @@
     justify-content: center;
     margin: 20px auto 40px auto;
 }
-
-.menu {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0;
-    padding-left: 26vw;
-}
-
-.menu li {
-    margin: auto 1.5vw;
-    cursor: pointer;
-}
-
-.menu li:hover {
-    text-decoration-line: underline;
-}
-
-.navBar {
-    margin-bottom: 5%;
-}
-
-.menuWrap {
-    display: flex;
-    justify-content: space-between;
-}
-
-.search {
-    display: flex;
-    padding: 1vw 1vw 0 0;
-}
-
-.search input[type='text'] {
-    margin-left: 10px;
-    font-size: 12px;
-    border: 0;
-    outline: none;
-    padding-left: 10px;
-    padding-bottom: 3px;
-    border-bottom: 1px solid #333;
-}
-
 .cardWarp {
     cursor: pointer;
     margin-bottom: 2vw;
@@ -89,24 +78,67 @@
     padding: 5px 10px;
     z-index: 99;
 }
-
-.pro-img {
-    display: flex;
-    justify-content: flex-end;
+.menu li {
+    margin: auto 1.5vw;
+    cursor: pointer;
 }
 
-.detail-title {
-    font-size: 1.9rem;
+.menu li:hover {
+    text-decoration-line: underline;
 }
+@media screen and (min-width: 1339px) {
+    .menuBar {
+        display: none;
+    }
+    .menu {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 0;
+        padding-left: 28%;
+    }
 
-.detail-price {
-    font-size: 1.2rem;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
+    .navBar {
+        margin-bottom: 5%;
+    }
 
-.detail-get-button {
-    margin-top: 50px;
-    padding: 10px;
-    width: 100%;
+    .menuWrap {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .search {
+        display: flex;
+        padding: 1vw 1vw 0 0;
+    }
+
+    .search input[type='text'] {
+        margin-left: 10px;
+        font-size: 12px;
+        border: 0;
+        outline: none;
+        padding-left: 10px;
+        padding-bottom: 3px;
+        border-bottom: 1px solid #333;
+    }
+
+    .pro-img {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .detail-title {
+        font-size: 1.9rem;
+    }
+
+    .detail-price {
+        font-size: 1.2rem;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .detail-get-button {
+        margin-top: 50px;
+        padding: 10px;
+        width: 100%;
+    }
 }

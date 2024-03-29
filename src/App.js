@@ -21,13 +21,16 @@ import PrivateRoute from './route/PrivateRoute';
  */
 function App() {
     const [authenticate, setAuthenticate] = useState(false); // true 이면 로그인
+    const toggleAuthenticate = () => {
+        setAuthenticate(authenticate => !authenticate);
+    };
     useEffect(() => {
         console.log(authenticate);
     }, [authenticate]);
 
     return (
         <div className="App">
-            <Nav authenticate={authenticate} />
+            <Nav authenticate={authenticate} toggleAuthenticate={toggleAuthenticate} />
             <Routes>
                 <Route path="/" element={<Products />} />
                 <Route path="/product/:id" element={<PrivateRoute authenticate={authenticate} />} />
