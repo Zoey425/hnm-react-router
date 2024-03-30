@@ -37,6 +37,18 @@
     .search {
         margin-left: 15px;
     }
+
+    .pro-img img {
+        width: -webkit-fill-available;
+    }
+
+    .detailBtn {
+        width: 100%;
+    }
+
+    .dropDownWrap {
+        margin: 20px 0;
+    }
 }
 
 .App {
@@ -114,6 +126,16 @@
     border-bottom: 1px solid #333;
 }
 
+.detail-title {
+    font-size: 1.9rem;
+}
+
+.detail-price {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 @media screen and (min-width: 1339px) {
     .menuBar {
         display: none;
@@ -137,16 +159,6 @@
     .pro-img {
         display: flex;
         justify-content: flex-end;
-    }
-
-    .detail-title {
-        font-size: 1.9rem;
-    }
-
-    .detail-price {
-        font-size: 1.2rem;
-        margin-top: 20px;
-        margin-bottom: 20px;
     }
 
     .detail-get-button {

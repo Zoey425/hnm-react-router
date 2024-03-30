@@ -23,7 +23,7 @@ const ProductDetail = () => {
                 <Col>
                     <div className="detail-title">{productDetail?.title}</div>
                     <div className="detail-price">{productDetail?.price} 원</div>
-                    <div>
+                    <div className="dropDownWrap">
                         <Dropdown>
                             <Dropdown.Toggle variant="success" id="dropdown-basic">
                                 Size
@@ -39,7 +39,7 @@ const ProductDetail = () => {
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
-                    <Button variant="dark" className="detail-get-button">
+                    <Button variant="dark" className="detail-get-button detailBtn">
                         구매하기
                     </Button>
                 </Col>
