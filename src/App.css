@@ -8,7 +8,8 @@
     .closeBtn {
         position: absolute;
         z-index: 5;
-        padding-left: 10px;
+        padding-left: 4px;
+        top: 30vw;
     }
 
     .menuWrap {
@@ -17,9 +18,11 @@
         z-index: 4;
         background-color: #fff;
         height: -webkit-fill-available;
-        width: 50%;
-        top: 6vw;
-        padding: 30% 0;
+        width: 84%;
+        top: -20px;
+        left: -20px;
+        padding-top: 50vw;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
     .login-btn {
@@ -81,6 +84,7 @@
 .cardWarp {
     cursor: pointer;
     margin-bottom: 2vw;
+    padding-bottom: 5%;
 }
 
 .cardWarp:hover {
@@ -125,17 +129,60 @@
     padding-bottom: 3px;
     border-bottom: 1px solid #333;
 }
+.detail-price {
+    font-size: 22px;
+    font-weight: 800;
+    color: #000000;
+    margin-top: 5px;
+    padding-bottom: 20px;
+}
+
+.cardImgNewDetail {
+    background-color: #92929222;
+    margin: 10px 0;
+    padding: 5px 10px;
+    font-size: 10px;
+    width: 50px;
+}
+
+.sizeBtn {
+    width: 100%;
+    text-align: left;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #666;
+}
+.cardTitle {
+    overflow: hidden;
+    display: -webkit-box;
+    max-height: calc(2.6em);
+    font-size: 14px;
+    font-weight: 300;
+    overflow-wrap: break-word;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin-top: 10px;
+}
 
 .detail-title {
-    font-size: 1.9rem;
-}
-
-.detail-price {
-    font-size: 1.2rem;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
     margin-top: 20px;
-    margin-bottom: 20px;
 }
 
+.cardPrice {
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+    padding: 18px 0 16px;
+}
+.wrapTitlePrice {
+    box-shadow: rgb(238, 238, 238) 0px -1px 0px inset;
+}
 @media screen and (min-width: 1339px) {
     .menuBar {
         display: none;

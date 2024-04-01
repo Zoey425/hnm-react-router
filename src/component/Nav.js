@@ -36,6 +36,7 @@ const Nav = ({ authenticate, toggleAuthenticate }) => {
     };
     return (
         <div className="navBar">
+            <div></div>
             <div className="login-btn" onClick={goLogin}>
                 <FontAwesomeIcon icon={faUser} />
                 <div>{authenticate === false ? '로그인' : '로그아웃'}</div>

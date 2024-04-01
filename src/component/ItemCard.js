@@ -15,8 +15,8 @@ const ItemCard = ({ item }) => {
                     <img src={item?.img} alt={item?.title} />
                 </div>
             </div>
-            <div>{item?.title}</div>
-            <div>{item?.price}</div>
+            <div className="cardTitle">{item?.title}</div>
+            <div className="cardPrice">{item?.price} 원</div>
         </div>
     );
 };

@@ -20,12 +20,17 @@ const ProductDetail = () => {
                 <Col className="pro-img">
                     <img src={productDetail?.img} alt={productDetail?.title} />
                 </Col>
-                <Col>
-                    <div className="detail-title">{productDetail?.title}</div>
-                    <div className="detail-price">{productDetail?.price} 원</div>
+                <Col className="detailDisplay">
+                    <div className={productDetail?.new === true ? 'cardImgNewDetail' : ''}>
+                        {productDetail?.new === true ? 'NEW' : ''}
+                    </div>
+                    <div className="wrapTitlePrice">
+                        <div className="detail-title">{productDetail?.title}</div>
+                        <div className="detail-price">{productDetail?.price} 원</div>
+                    </div>
                     <div className="dropDownWrap">
                         <Dropdown>
-                            <Dropdown.Toggle variant="success" id="dropdown-basic">
+                            <Dropdown.Toggle variant="link" id="dropdown-basic" className="sizeBtn">
                                 Size
                             </Dropdown.Toggle>
 
