@@ -1,32 +1,37 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Button, Col, Container, Row, Dropdown } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { productAction } from '../redux/actions/productAction';
 
 const ProductDetail = () => {
     let { id } = useParams();
-    const [productDetail, setProductDetail] = useState({});
+    const product = useSelector(state => state.product.selectedItem);
+    const dispatch = useDispatch();
     const getProductDetail = async () => {
-        let url = `https://my-json-server.typicode.com/Zoey425/hnm-react-router/products/${id}`;
-        let response = await fetch(url);
-        let data = await response.json();
-        setProductDetail(data);
+        dispatch(productAction.getProductDetail(id));
     };
-    useEffect(() => {
-        getProductDetail();
-    }, []);
+    // useEffect(() => {
+    //     getProductDetail();
+    // }, []);
+
+    if (!product) {
+        return <div>상품을 불러오는 중입니다...</div>;
+    }
+
     return (
         <Container fluid="sm">
             <Row>
                 <Col className="pro-img">
-                    <img src={productDetail?.img} alt={productDetail?.title} />
+                    <img src={product?.img} alt={product?.title} />
                 </Col>
                 <Col className="detailDisplay">
-                    <div className={productDetail?.new === true ? 'cardImgNewDetail' : ''}>
-                        {productDetail?.new === true ? 'NEW' : ''}
+                    <div className={product?.new === true ? 'cardImgNewDetail' : ''}>
+                        {product?.new === true ? 'NEW' : ''}
                     </div>
                     <div className="wrapTitlePrice">
-                        <div className="detail-title">{productDetail?.title}</div>
-                        <div className="detail-price">{productDetail?.price} 원</div>
+                        <div className="detail-title">{product?.title}</div>
+                        <div className="detail-price">{product?.price} 원</div>
                     </div>
                     <div className="dropDownWrap">
                         <Dropdown>
@@ -35,8 +40,9 @@ const ProductDetail = () => {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                                {Array.isArray(productDetail.size) &&
-                                    productDetail.size.map((item, index) => (
+                                {product.size &&
+                                    Array.isArray(product.size) &&
+                                    product.size.map((item, index) => (
                                         <Dropdown.Item key={index} href={item}>
                                             {item}
                                         </Dropdown.Item>

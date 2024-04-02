@@ -4,8 +4,10 @@ import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faClose, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-const Nav = ({ authenticate, toggleAuthenticate }) => {
+const Nav = ({ toggleAuthenticate }) => {
+    const authenticate = useSelector(state => state.auth.authenticate);
     const menuList = ['Women', 'Men', 'Baby', 'Kids', 'H&M', 'HOME', 'Sport', 'Sale', '지속가능성'];
     const navigate = useNavigate();
     const [isShow, setIsShow] = useState(false);
@@ -34,6 +36,8 @@ const Nav = ({ authenticate, toggleAuthenticate }) => {
             handleToggle(false);
         }
     };
+
+    console.log('값', authenticate);
     return (
         <div className="navBar">
             <div></div>
