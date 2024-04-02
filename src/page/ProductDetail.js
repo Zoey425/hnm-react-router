@@ -11,9 +11,10 @@ const ProductDetail = () => {
     const getProductDetail = async () => {
         dispatch(productAction.getProductDetail(id));
     };
-    // useEffect(() => {
-    //     getProductDetail();
-    // }, []);
+
+    useEffect(() => {
+        getProductDetail();
+    }, []);
 
     if (!product) {
         return <div>상품을 불러오는 중입니다...</div>;
