@@ -4,7 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import ItemCard from '../component/ItemCard';
 import { useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { productAction } from '../redux/actions/productAction';
+import { fetchProducts } from '../redux/reducers/ProductSlice';
 
 const Products = () => {
     const productList = useSelector(state => state.product.productList);
@@ -12,8 +12,8 @@ const Products = () => {
     const dispatch = useDispatch();
     const getProducts = async () => {
         let keyword = query.get('q') || '';
-        console.log('쿼리값은?', keyword);
-        dispatch(productAction.getProducts(keyword));
+        //console.log('쿼리값은?', keyword);
+        dispatch(fetchProducts(keyword));
     };
 
     useEffect(() => {
